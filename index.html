@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tip Calculator</title>
+  </head>
+  <body class="
+  font-body 
+  bg-secondary-300
+  mx-auto
+  container
+  ">
+
+    <div class="mx-auto container">
+
+      <!-- logo -->
+      <div class="flex justify-center py-4 mt-8">
+        <img src="/images/logo.svg" alt="Logo">
+      </div>
+
+      <!-- tip calculator -->
+      <div class="
+      max-w-6xl
+      mx-auto
+      bg-white 
+      flex
+      flex-col
+      lg:flex-row
+      lg:gap-24
+      rounded-t-2xl 
+      px-8 
+      py-6
+      mt-8
+      ">
+
+      <!-- inputs div -->
+        <div class="flex flex-col flex-1">
+
+          <!-- bill div -->
+          <div class="flex flex-col mb-8">
+
+            <label class="
+            flex
+            justify-between
+            text-secondary-500 
+            text-xl
+            " for="">Bill <span class="hidden billerr text-red-500">Can't be 0</span></label>
+
+            <input type="number" class="
+            bill-input
+            bg-no-repeat
+            bg-left-bottom
+            bg-secondary-100
+            rounded-md
+            outline-none
+            border-2
+            focus:border-primary-cyan
+            text-right
+            mb-9
+            px-4
+            py-2
+            text-xl
+            " placeholder="0.00" style="background-image: url('/images/icon-dollar.svg'); background-position: 17px 15px;">
+          </div>
+
+          <!-- tip% -->
+          <div class="flex flex-col mb-8">
+            <label class="text-secondary-500" for="">Select Tip %</label>
+
+            <!-- button div -->
+            <div class="
+            buttons
+            grid
+            grid-flow-row-dense
+            grid-cols-2
+            grid-rows-3
+            md:grid-cols-3
+            md:grid-rows-2
+            gap-6
+            md:gap-12
+            ">
+              <button class="
+              cursor-pointer
+              bg-secondary-900
+              hover:bg-primary-cyan
+              focus:bg-primary-cyan
+              text-white
+              focus:text-secondary-900
+              hover:text-secondary-900
+              text-2xl
+              lg:text-3xl
+              rounded-md
+              transition-all
+              py-2
+              px-4
+              ">5<i class="fa-light fa-percent"></i></button>
+              
+              <button class="
+              cursor-pointer
+              bg-secondary-900
+              hover:bg-primary-cyan
+              focus:bg-primary-cyan
+              text-white
+              focus:text-secondary-900
+              hover:text-secondary-900
+              text-2xl
+              lg:text-3xl
+              rounded-md
+              transition-all
+              py-2
+              px-4
+              ">10<i class="fa-light fa-percent"></i></button>
+
+              <button class="
+              cursor-pointer
+              bg-secondary-900
+              hover:bg-primary-cyan
+              focus:bg-primary-cyan
+              text-white
+              focus:text-secondary-900
+              hover:text-secondary-900
+              text-2xl
+              lg:text-3xl
+              rounded-md
+              transition-all
+              py-2
+              px-4
+              ">15<i class="fa-light fa-percent"></i></button>
+
+              <button class="
+              cursor-pointer
+              bg-secondary-900
+              hover:bg-primary-cyan
+              focus:bg-primary-cyan
+              text-white
+              focus:text-secondary-900
+              hover:text-secondary-900
+              text-2xl
+              lg:text-3xl
+              rounded-md
+              transition-all
+              py-2
+              px-4
+              ">25<i class="fa-light fa-percent"></i></button>
+
+              <button class="
+              cursor-pointer
+              bg-secondary-900
+              hover:bg-primary-cyan
+              focus:bg-primary-cyan
+              text-white
+              focus:text-secondary-900
+              hover:text-secondary-900
+              text-2xl
+              lg:text-3xl
+              rounded-md
+              transition-all
+              py-2
+              px-4
+              ">50<i class="fa-light fa-percent"></i></button>
+
+              <input type="number" class="
+              customTip
+              bg-secondary-300 
+              text-secondary-900 
+              text-right 
+              rounded-md 
+              px-2 
+              text-2xl
+              " placeholder="Custom">
+
+            </div>
+
+          </div>
+
+          <!-- people div -->
+          <div class="flex flex-col mb-8">
+            
+            <label class="
+            flex 
+            justify-between 
+            text-secondary-500 
+            text-lg
+            " for="">Number of people <span class="hidden err text-red-500">Can't be 0</span></label>
+
+            <input type="number" class="
+            people-input
+            bg-no-repeat
+            bg-left-bottom
+            bg-secondary-100
+            rounded-md
+            outline-none
+            border-2
+            focus:border-primary-cyan
+            text-right
+            mb-9
+            px-4
+            py-2
+            text-xl
+            " placeholder="0" style="background-image: url('/images/icon-person.svg'); background-position: 17px 15px;">
+          </div>
+
+        </div>
+
+      <!-- result  div -->
+        <div class="
+        flex
+        flex-col
+        flex-1
+        gap-6
+        lg:justify-between
+        bg-secondary-900
+        py-4
+        px-6
+        rounded-md
+        ">
+
+        <div class="flex flex-col gap-8">
+          <!-- tip/person -->
+          <div class="flex flex-wrap items-center justify-between">
+            <div>
+              <p class="text-secondary-100 text-lg md:text-2xl">Tip Amount</p>
+              <p class="text-secondary-500">/person</p>
+            </div>
+            <div>
+              <p class="tip text-primary-cyan text-3xl md:text-4xl">$ 0.00</p>
+            </div>
+          </div>
+
+          <!-- total/person -->
+          <div class="flex flex-wrap items-center justify-between">
+            <div>
+              <p class="text-secondary-100 text-lg md:text-2xl">Total</p>
+              <p class="text-secondary-500">/person</p>
+            </div>
+            <div>
+              <p class="money text-primary-cyan text-3xl md:text-4xl">$ 0.00</p>
+            </div>
+          </div>
+        </div>
+
+          <!-- reset -->
+          <button class="reset uppercase bg-primary-cyan text-secondary-900 rounded-md py-1 text-3xl">reset</button>
+        </div>
+
+      </div>
+
+    </div>
+
+    <script src="https://kit.fontawesome.com/4eaa959a81.js" crossorigin="anonymous"></script>
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>
