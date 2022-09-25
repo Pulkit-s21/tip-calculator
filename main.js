@@ -9,6 +9,8 @@ const money = document.querySelector(".money");
 const billErr = document.querySelector(".billerr"); 
 const err = document.querySelector(".err"); 
 const resetBtn = document.querySelector(".reset");
+
+// ! Need to work on the custom tip % method
 // const customTipInput = document.querySelector(".customTip");
 // const customTip = Number(document.querySelector(".customTip").value);
 
@@ -41,10 +43,10 @@ btns.forEach(btn=>{
                 err.classList.add("hidden");
                 peopleInput.classList.remove("error");
 
-                const result = (tipPercentage/100)*billAmount;
+                const result = (tipPercentage/100)*billAmount; //total tip on the bill amount
 
-                tip.textContent = `$${(result/people).toFixed(2)}`;
-                money.textContent = `$${((billAmount+result)/people).toFixed(2)}`;
+                tip.textContent = `$${(result/people).toFixed(2)}`; //total tip per person
+                money.textContent = `$${((billAmount+result)/people).toFixed(2)}`; //total amount per perso
             }
         }
         calculateTip();
