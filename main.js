@@ -96,7 +96,15 @@ btns.forEach(btn=>{
 
 resetBtn.addEventListener("click",()=>{
     billInput.value = '';
+    // so when user resets the error messages also go away
+    billErr.classList.add("hidden");
+    billInput.classList.remove("error");
+
     peopleInput.value = '';
+    // so when user resets the error messages also go away
+    err.classList.add("hidden");
+    peopleInput.classList.remove("error");
+
     customTipInput.value = '';
     tip.textContent = '$ 0.00';
     money.textContent = '$ 0.00';
