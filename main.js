@@ -11,8 +11,49 @@ const err = document.querySelector(".err");
 const resetBtn = document.querySelector(".reset");
 
 // ! Need to work on the custom tip % method
-// const customTipInput = document.querySelector(".customTip");
-// const customTip = Number(document.querySelector(".customTip").value);
+// * I made the custom tip % work as well.................................LETS GOOOOOOOOOOOOOOOOOOOOOOOOOOOOO 
+const customTipInput = document.querySelector(".customTip");
+
+// Custom Tip % function
+
+customTipInput.addEventListener("keyup",()=>{
+    const customTip = Number(document.querySelector(".customTip").value);
+    
+    if(!customTipInput == ''){
+        const billAmount = Number(document.querySelector(".bill-input").value);
+        const people = document.querySelector(".people-input").value;
+
+        // Error to show if bill isnt entered
+        if(billAmount < 1){
+            billErr.classList.remove("hidden");
+            billInput.classList.add("error");
+        }
+        // removing the error class once it is entered
+        else{
+            billErr.classList.add("hidden");
+            billInput.classList.remove("error");
+        }
+
+        // Error to show if people isnt entered
+        if(people < 1){
+            err.classList.remove("hidden");
+            peopleInput.classList.add("error");
+        }
+
+        // removing the error class once it is entered
+        else{
+            err.classList.add("hidden");
+            peopleInput.classList.remove("error");
+
+            const result = (customTip/100)*billAmount; //total tip on the bill amount
+
+            tip.textContent = `$${(result/people).toFixed(2)}`; //total tip per person
+            money.textContent = `$${((billAmount+result)/people).toFixed(2)}`; //total amount per perso
+        }
+    }
+});
+
+// Tip % button function
 
 btns.forEach(btn=>{
     btn.addEventListener("click",()=>{
@@ -56,6 +97,7 @@ btns.forEach(btn=>{
 resetBtn.addEventListener("click",()=>{
     billInput.value = '';
     peopleInput.value = '';
+    customTipInput.value = '';
     tip.textContent = '$ 0.00';
     money.textContent = '$ 0.00';
-})
+});
